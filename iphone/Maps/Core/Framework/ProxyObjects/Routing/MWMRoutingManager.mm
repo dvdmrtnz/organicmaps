@@ -276,7 +276,10 @@
   auto announceStreets = [NSUserDefaults.standardUserDefaults boolForKey:@"UserDefaultsNeedToEnableStreetNamesTTS"];
   self.rm.GenerateNotifications(notifications, announceStreets);
   for (auto const & text : notifications)
+  {
+    LOG(LINFO, ("TTS:", text));
     [turnNotifications addObject:@(text.c_str())];
+  }
   NSArray<id<MWMRoutingManagerListener>> * objects = self.listeners.allObjects;
   for (id<MWMRoutingManagerListener> object in objects)
     [object didLocationUpdate:turnNotifications];

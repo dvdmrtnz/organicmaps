@@ -148,9 +148,9 @@ void NotificationManager::GenerateTurnNotifications(std::vector<TurnItemDist> co
   turnNotifications.emplace_back(std::move(secondNotification));
 
   // Log turn notifications TTS
-  if (!turnNotifications.empty())
+  /*if (!turnNotifications.empty())
     for (auto const & notification : turnNotifications)
-      LOG(LINFO, ("TTS:", notification));
+      LOG(LINFO, ("TTS:", notification));*/
 
   // Turn notification with word "Then" (about the second turn) will be pronounced.
   // When this second turn become the first one the first notification about the turn

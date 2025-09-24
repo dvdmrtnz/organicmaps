@@ -218,7 +218,10 @@ char const * kRenderAltitudeImagesQueueLabel = "mapsme.mwmrouter.renderAltitudeI
   GetFramework().GetRoutingManager().GenerateNotifications(notifications, announceStreets);
 
   for (auto const & text : notifications)
+  {
+    LOG(LINFO, ("TTS:", text));
     [turnNotifications addObject:@(text.c_str())];
+  }
   return [turnNotifications copy];
 }
 
