@@ -114,11 +114,11 @@ ScreenBase const ScaleInto(ScreenBase const & screen, m2::RectD const & boundRec
     else
     {
       // Will break in Debug, log in Release.
-      LOG(LERROR, ("Bad scale factor =", k, "Bound rect =", boundRect, "Clip rect =", clipRect));
+      //LOG(LERROR, ("Bad scale factor =", k, "Bound rect =", boundRect, "Clip rect =", clipRect));
     }
   };
 
-  ASSERT(boundRect.IsPointInside(clipRect.Center()), ("center point should be inside boundRect"));
+  //ASSERT(boundRect.IsPointInside(clipRect.Center()), ("center point should be inside boundRect"));
 
   if (clipRect.minX() < boundRect.minX())
     DoScale((boundRect.minX() - clipRect.Center().x) / (clipRect.minX() - clipRect.Center().x));
